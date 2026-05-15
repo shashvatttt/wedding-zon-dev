@@ -1,0 +1,1 @@
+app/explore/page.tsx(243,71): error TS2339: Property 'family_type' does not exist on type '{ minAge: string; maxAge: string; religion: string; city: string; state: string; community: string; mother_tongue: string; marital_status: string; height: string; highest_education: string; occupation: string; ... 11 more ...; sortBy: string; }'.

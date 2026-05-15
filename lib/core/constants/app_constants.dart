@@ -1,0 +1,77 @@
+class AppConstants {
+  // static const String baseUrl = 'https://weddingzon-backend.onrender.com/api';
+  static const String baseUrl = 'https://weddingzon.hoocaitechnologies.com/api';
+
+  static const String tokenKey = 'access_token';
+  static const String refreshTokenKey = 'refresh_token';
+
+  static const String authGoogle = '/auth/google';
+  static const String authLogin = '/auth/login';
+  static const String authSendOtp = '/auth/send-otp';
+  static const String authVerifyOtp = '/auth/verify-otp';
+  static const String authMe = '/auth/me';
+  static const String refreshToken = '/auth/refresh';
+  static const String authRegisterDetails = '/auth/register-details';
+  static const String authLogout = '/auth/logout';
+  static const String usersUploadPhotos = '/users/upload-photos';
+  static const String usersPhotos = '/users/photos';
+  static const String usersFeed = '/users/feed';
+  static const String usersSearch = '/users/search';
+  static const String usersProfile = '/users';
+  static const String users = '/users';
+
+  static const String connectionsSend = '/connections/send';
+  static const String connectionsAccept = '/connections/accept';
+  static const String connectionsReject = '/connections/reject';
+
+  static const String connectionsCancel = '/connections/cancel';
+  static const String connectionsRemove = '/connections/delete';
+
+  static const String connectionsRequestPhotoAccess =
+      '/connections/request-photo-access';
+  static const String connectionsRequestDetailsAccess =
+      '/connections/request-details-access';
+
+  static const String connectionsRespondPhoto = '/connections/respond-photo';
+  static const String connectionsRespondDetails =
+      '/connections/respond-details';
+
+  static const String connectionsSent = '/connections/requests/sent';
+  static const String connectionsRequests = '/connections/requests';
+  static const String connectionsMyConnections = '/connections/my-connections';
+  static const String connectionsNotifications = '/connections/notifications';
+
+  static const String connectionsStatus = '/connections/status';
+
+  static const String chatConversations = '/chat/conversations';
+  static const String chatHistory = '/chat/history';
+  static const String chatUpload = '/chat/upload';
+  static const String chatMarkRead = '/chat/read';
+
+  static const String socketUrl = 'https://weddingzon-backend.onrender.com';
+
+  static const String adminUsers = '/admin/users';
+  static const String adminStats = '/admin/stats';
+
+  static const String franchiseCreateProfile = '/franchise/create-profile';
+  static const String franchiseProfiles = '/franchise/profiles';
+  static const String franchisePayment = '/franchise/payment';
+  static const String franchisePdf = '/franchise/custom-matches';
+
+  static const String notificationsRegister = '/notifications/register-token';
+  static const String notificationsUnregister =
+      '/notifications/unregister-token';
+
+  static const String usersNearby = '/users/nearby';
+  static const String usersLocation = '/users/location';
+  static const String usersBlock = '/users/block';
+  static const String usersUnblock = '/users/unblock';
+  static const String usersReport = '/users/report';
+
+  static const String deepLinkDomain = 'dev.d34g4kpybwb3xb.amplifyapp.com';
+  static const String deepLinkScheme = 'https';
+
+  static String getProfileDeepLink(String username) {
+    return '$deepLinkScheme://$deepLinkDomain/$username';
+  }
+}

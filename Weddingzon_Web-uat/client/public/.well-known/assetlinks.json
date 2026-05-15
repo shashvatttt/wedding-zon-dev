@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.example.weddingzon",
+            "sha256_cert_fingerprints": [
+                "95:B2:9C:AD:3F:0C:97:0B:DE:5C:75:2D:76:75:98:C1:7D:52:33:CF:EC:60:82:62:9A:D7:83:FE:65:23:33:94"
+            ]
+        }
+    }
+]

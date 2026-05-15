@@ -1,0 +1,104 @@
+name: weddingzon
+description: "A new Flutter project."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # Core
+  provider: ^6.1.1
+  intl: any
+  dio: ^5.4.0
+  flutter_secure_storage: ^10.0.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.2
+
+  # Auth
+  google_sign_in: ^6.1.6
+
+  # UI
+  cupertino_icons: ^1.0.8
+  google_fonts: ^7.0.2
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  fluttertoast: ^9.0.0
+  smooth_page_indicator: ^2.0.1
+  flutter_svg: ^2.0.9
+  flutter_spinkit: ^5.2.1
+
+  # Photo Management
+  image_picker: ^1.0.7
+  file_picker: ^8.1.6
+  flutter_image_compress: ^2.1.0
+  http_parser: ^4.0.2
+  mime: ^2.0.0
+  dio_cookie_manager: ^3.3.0
+  cookie_jar: ^4.0.8
+  photo_view: ^0.15.0
+  timeago: ^3.7.0
+  connectivity_plus: ^6.0.0
+
+  # Chat & Maps
+  socket_io_client: ^3.1.4
+  flutter_map: ^8.2.2
+  latlong2: ^0.9.1
+  geolocator: ^14.0.2
+  geocoding: ^3.0.0
+
+  # Firebase & Notifications
+  firebase_core: ^4.4.0
+  firebase_messaging: ^16.1.1
+  flutter_local_notifications: ^19.5.0
+
+  # Utilities
+  uuid: ^4.5.1
+  app_links: ^6.3.0
+  share_plus: ^10.1.4
+  open_file: ^3.5.11
+  table_calendar: ^3.1.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  yaml: ^3.1.2
+
+  # App Launcher Icon Generator
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    # Main app assets
+    - assets/
+    - assets/app_icon/
+    - assets/icons/
+    - assets/video/
+
+    # UI Clone assets
+    - assets/ui_clone/icons/
+    - assets/ui_clone/illustrations/
+    - assets/ui_clone/images/
+    - assets/ui_clone/images/backgrounds/
+    - assets/ui_clone/images/logos/
+    - assets/ui_clone/images/profile_photos/
+    - assets/ui_clone/images/shopping/
+    - assets/landing/
+
+    # Localization
+    - lib/core/localization/translations/
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/app_icon/logo.png"
+  adaptive_icon_background: "#FFFFFF"

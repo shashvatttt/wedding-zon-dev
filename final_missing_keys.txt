@@ -1,0 +1,35 @@
+FINAL MISSING LOCALIZATION KEYS
+================================
+
+From vendor_listing_social_links_ui.dart:
+- "No file chosen"
+
+From vendor_browse_screen_ui.dart:
+- "No Vendors Found"
+- "Try adjusting your search or filters"
+- "No vendors available at the moment"
+
+From feed_screen_ui.dart:
+- "Failed to clear filters: "
+- "Unable to process request. Please try again later."
+- "Failed to send connection request. Please try again."
+- "Unable to process requests. Please try again later."
+- "Failed to send requests. Please try again."
+- "Unable to process cancellations. Please try again later."
+- "Failed to cancel requests. Please try again."
+
+From settings_screen_ui.dart:
+- "Cancel" (already exists but not used)
+
+KEYS TO ADD:
+1. no_file_chosen - "No file chosen"
+2. no_vendors_found - "No Vendors Found"
+3. try_adjusting_search - "Try adjusting your search or filters"
+4. no_vendors_available - "No vendors available at the moment"
+5. failed_clear_filters - "Failed to clear filters"
+6. unable_process_request - "Unable to process request. Please try again later."
+7. failed_send_connection - "Failed to send connection request. Please try again."
+8. unable_process_requests - "Unable to process requests. Please try again later."
+9. failed_send_requests - "Failed to send requests. Please try again."
+10. unable_process_cancellations - "Unable to process cancellations. Please try again later."
+11. failed_cancel_requests - "Failed to cancel requests. Please try again."

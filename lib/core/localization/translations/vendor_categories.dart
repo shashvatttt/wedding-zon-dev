@@ -1,0 +1,15 @@
+const Map<String, String> vendorCategoryKeys = {
+  'all': 'category_all',
+  'Photography': 'category_photography',
+  'Venue': 'category_venue',
+  'Catering': 'category_catering',
+  'Makeup Artist': 'category_makeup',
+  'Decorator': 'category_decorator',
+  'Music': 'category_music',
+  'Transportation': 'category_transportation',
+  'Invitation': 'category_invitation',
+  'Jewelry': 'category_jewelry',
+  'Clothing': 'category_clothing',
+  'Gifts': 'category_gifts',
+  'Other': 'category_other',
+};

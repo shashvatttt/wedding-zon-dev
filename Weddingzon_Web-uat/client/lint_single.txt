@@ -1,0 +1,44 @@
+
+C:\Users\anshu\OneDrive\Desktop\WeddingZon\Weddingzon_Web_Final\client\app\[username]\ClientProfile.tsx
+   12:10   warning  'Card' is defined but never used                     @typescript-eslint/no-unused-vars
+   12:16   warning  'CardContent' is defined but never used              @typescript-eslint/no-unused-vars
+   15:5    warning  'Carousel' is defined but never used                 @typescript-eslint/no-unused-vars
+   16:5    warning  'CarouselContent' is defined but never used          @typescript-eslint/no-unused-vars
+   17:5    warning  'CarouselItem' is defined but never used             @typescript-eslint/no-unused-vars
+   18:5    warning  'CarouselNext' is defined but never used             @typescript-eslint/no-unused-vars
+   19:5    warning  'CarouselPrevious' is defined but never used         @typescript-eslint/no-unused-vars
+   22:10   warning  'Heart' is defined but never used                    @typescript-eslint/no-unused-vars
+   22:39   warning  'MapPin' is defined but never used                   @typescript-eslint/no-unused-vars
+   22:60   warning  'Camera' is defined but never used                   @typescript-eslint/no-unused-vars
+   22:68   warning  'Lock' is defined but never used                     @typescript-eslint/no-unused-vars
+   22:80   warning  'Edit' is defined but never used                     @typescript-eslint/no-unused-vars
+   22:93   warning  'MessageCircle' is defined but never used            @typescript-eslint/no-unused-vars
+   22:111  warning  'Map' is defined but never used                      @typescript-eslint/no-unused-vars
+   22:116  warning  'Eye' is defined but never used                      @typescript-eslint/no-unused-vars
+   22:121  warning  'Share2' is defined but never used                   @typescript-eslint/no-unused-vars
+   22:129  warning  'MoreVertical' is defined but never used             @typescript-eslint/no-unused-vars
+   22:143  warning  'Flag' is defined but never used                     @typescript-eslint/no-unused-vars
+   22:149  warning  'Ban' is defined but never used                      @typescript-eslint/no-unused-vars
+   25:8    warning  'ShareDialog' is defined but never used              @typescript-eslint/no-unused-vars
+   48:44   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+   49:52   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+   55:12   warning  'formData' is assigned a value but never used        @typescript-eslint/no-unused-vars
+   63:42   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+   70:12   warning  'isShareOpen' is assigned a value but never used     @typescript-eslint/no-unused-vars
+   70:25   warning  'setIsShareOpen' is assigned a value but never used  @typescript-eslint/no-unused-vars
+   76:12   warning  'isMenuOpen' is assigned a value but never used      @typescript-eslint/no-unused-vars
+   76:24   warning  'setIsMenuOpen' is assigned a value but never used   @typescript-eslint/no-unused-vars
+   93:33   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  110:25   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  116:27   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  147:29   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  195:33   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  214:33   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  227:25   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  244:33   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  265:33   error    Unexpected any. Specify a different type             @typescript-eslint/no-explicit-any
+  273:44   warning  'idx' is defined but never used                      @typescript-eslint/no-unused-vars
+  689:28   warning  'IconComp' is assigned a value but never used        @typescript-eslint/no-unused-vars
+
+✖ 39 problems (12 errors, 27 warnings)
+

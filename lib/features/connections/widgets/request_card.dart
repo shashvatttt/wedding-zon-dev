@@ -1,0 +1,221 @@
+import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+
+class RequestCard extends StatelessWidget {
+  final Map<String, dynamic> request;
+  final VoidCallback onAccept;
+  final VoidCallback onReject;
+  final bool isLoading;
+
+  const RequestCard({
+    super.key,
+    required this.request,
+    required this.onAccept,
+    required this.onReject,
+    required this.isLoading,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final Map<String, dynamic>? requester =
+        request['requester'] as Map<String, dynamic>? ??
+        request['from'] as Map<String, dynamic>? ??
+        request['sender'] as Map<String, dynamic>? ??
+        request['fromUser'] as Map<String, dynamic>? ??
+        request['from_user'] as Map<String, dynamic>?;
+
+    if (requester == null) return const SizedBox.shrink();
+
+    final username = requester['username'] ?? 'Unknown';
+    final firstName = requester['first_name'] ?? requester['firstName'] ?? '';
+    final lastName = requester['last_name'] ?? requester['lastName'] ?? '';
+    final fullName = '$firstName $lastName'.trim();
+    final displayName = fullName.isNotEmpty ? fullName : username;
+    final profilePhoto =
+        requester['profilePhoto'] ?? requester['profile_photo'] ?? '';
+    final occupation = requester['occupation'] ?? 'Occupation N/A';
+    final requestType = request['type'] as String? ?? 'connection';
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: Colors.black12),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.25),
+            blurRadius: 4,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            CircleAvatar(
+              radius: 28,
+              backgroundColor: Colors.grey.shade100,
+              backgroundImage: profilePhoto.isNotEmpty
+                  ? CachedNetworkImageProvider(profilePhoto)
+                  : null,
+              child: profilePhoto.isEmpty
+                  ? Text(
+                      displayName[0].toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey.shade600,
+                      ),
+                    )
+                  : null,
+            ),
+            const SizedBox(width: 12),
+
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  _buildTypeBadge(requestType),
+                  const SizedBox(height: 4),
+
+                  Text(
+                    displayName,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black87,
+                    ),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  const SizedBox(height: 2),
+
+                  Text(
+                    occupation,
+                    style: TextStyle(fontSize: 13, color: Colors.grey.shade600),
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 8),
+
+            Column(
+              children: [
+                _buildAcceptButton(),
+                const SizedBox(height: 8),
+                _buildRejectButton(),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTypeBadge(String type) {
+    Color bgColor;
+    Color textColor;
+    String text;
+
+    switch (type.toLowerCase()) {
+      case 'connection':
+        bgColor = const Color(0xFFFFEBEE);
+        textColor = const Color(0xFFE91E63);
+        text = 'Connection';
+        break;
+      case 'photo':
+        bgColor = const Color(0xFFE3F2FD);
+        textColor = const Color(0xFF2196F3);
+        text = 'Photo Access';
+        break;
+      case 'details':
+        bgColor = const Color(0xFFE3F2FD);
+        textColor = const Color(0xFF2196F3);
+        text = 'Details Access';
+        break;
+      default:
+        bgColor = Colors.grey.shade100;
+        textColor = Colors.grey.shade700;
+        text = 'Request';
+    }
+
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(4),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(
+          color: textColor,
+          fontSize: 10,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildAcceptButton() {
+    return SizedBox(
+      height: 32,
+      child: ElevatedButton(
+        onPressed: isLoading ? null : onAccept,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color(0xFFD4AF37),
+          foregroundColor: Colors.white,
+          elevation: 0,
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Icon(Icons.check, size: 16),
+            SizedBox(width: 4),
+            Text(
+              'Accept',
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildRejectButton() {
+    return SizedBox(
+      height: 32,
+      child: OutlinedButton(
+        onPressed: isLoading ? null : onReject,
+        style: OutlinedButton.styleFrom(
+          foregroundColor: Colors.grey.shade600,
+          backgroundColor: Colors.white,
+          side: BorderSide(color: Colors.grey.shade300),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            Icon(Icons.close, size: 16),
+            SizedBox(width: 4),
+            Text(
+              'Reject',
+              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
